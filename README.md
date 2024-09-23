@@ -1,2 +1,2 @@
 # JPMC-Weather-App
-Take home app for application
+Take home app for iOS position
