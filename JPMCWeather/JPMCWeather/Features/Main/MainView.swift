@@ -25,15 +25,15 @@ struct MainView: View {
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
-                .environment(searchVM)
                 .tag(Tab.search)
             WeatherDisplayView(location: searchVM.lastCityShown )
                 .tabItem {
                     Label("Weather", systemImage: "cloud.sun")
                 }
-                .environment(searchVM)
+                
                 .tag(Tab.weather)
         }
+        .environment(searchVM)
     }
     func setCurrentTab(_ tab: Tab) {
         activeTab = tab

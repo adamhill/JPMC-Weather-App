@@ -26,9 +26,6 @@ struct SearchView: View {
                     if isSearching {
                         ForEach(searchResults) { location in
                             NavigationLink("\(location.description)", value: location.description)
-//                            {
-//                                rememberLastLocation(for: location.description)
-//                            }
                         }
                     } else {
                         ForEach(searchVM.searchModel.locations) { location in
@@ -38,6 +35,7 @@ struct SearchView: View {
                 }
                 .navigationDestination(for: String.self) { loc in
                     WeatherDisplayView(location: loc)
+                        .environment(searchVM)
                 }
                 .navigationTitle("Recent Searches")
                 .searchable(
@@ -67,10 +65,6 @@ struct SearchView: View {
             }
         }
     }
-    
-    //Remember last location clicked
-    private func rememberLastLocation(for location: String) {
-        searchVM.lastCityShown = location}
     
     // Search existing Locations
     private func filterExistingLocations(for query: String) {

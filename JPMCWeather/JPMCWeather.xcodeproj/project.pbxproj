@@ -37,6 +37,8 @@
 				Features/Search/SearchModel.swift,
 				Features/WeatherDisplay/WeatherConditionsModel.swift,
 				Features/WeatherDisplay/WeatherDisplayView.swift,
+				Features/WeatherDisplay/WeatherDisplayViewModel.swift,
+				Services/WeatherAPIService.swift,
 			);
 			target = 9C79B65B2CA336AB0014E05E /* JPMCWeatherTests */;
 		};

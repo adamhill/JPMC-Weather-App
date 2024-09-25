@@ -27,6 +27,11 @@ struct Coord: Codable {
 }
 struct Weather: Codable {
     let main, description, icon: String
+    //Yay  we have AsyncImage!
+    var iconURL: URL {
+        let url = "https://openweathermap.org/img/wn/\(icon)@2x.png"
+        return URL(string: url)!
+    }
 }
 
 struct CoreInfo: Codable {
