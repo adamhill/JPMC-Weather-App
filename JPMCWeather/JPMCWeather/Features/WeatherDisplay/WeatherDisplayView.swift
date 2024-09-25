@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  WeatherDisplayVIew.swift
 //  JPMCWeather
 //
 //  Created by Adam Hill on 9/24/24.
@@ -7,18 +7,20 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct WeatherDisplayView: View {
+    var location : String
     var body: some View {
+        
+        
         VStack {
-            Image(systemName: "globe")
+            Image(systemName: "rainbow")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text(location)
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    WeatherDisplayView(location: "Dallas, US")
 }

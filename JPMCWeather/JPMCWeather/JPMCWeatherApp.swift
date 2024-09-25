@@ -11,7 +11,7 @@ import SwiftUI
 struct JPMCWeatherApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView().environment(SearchViewModel())
         }
     }
 }

@@ -29,9 +29,25 @@
 		9C79B6662CA336AB0014E05E /* JPMCWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JPMCWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9C79B6822CA372740014E05E /* Exceptions for "JPMCWeather" folder in "JPMCWeatherTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Features/Main/MainView.swift,
+				Features/Search/SearchModel.swift,
+				Features/WeatherDisplay/WeatherConditionsModel.swift,
+				Features/WeatherDisplay/WeatherDisplayView.swift,
+			);
+			target = 9C79B65B2CA336AB0014E05E /* JPMCWeatherTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9C79B64E2CA336AA0014E05E /* JPMCWeather */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9C79B6822CA372740014E05E /* Exceptions for "JPMCWeather" folder in "JPMCWeatherTests" target */,
+			);
 			path = JPMCWeather;
 			sourceTree = "<group>";
 		};
