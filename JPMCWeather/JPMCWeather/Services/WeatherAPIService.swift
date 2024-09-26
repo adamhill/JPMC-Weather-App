@@ -24,7 +24,7 @@ class WeatherAPIService {
             return
         }
         //TODO: Validate the querystring - null or empty, only alpha
-        let baseWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q=\(location)&appid=476060addfbb6367f054ce5fb40d2ec1"
+        let baseWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q=\(location)&units=imperial&lang=en&appid=476060addfbb6367f054ce5fb40d2ec1"
         query(url: baseWeatherURL, completion: completion)
     }
     
@@ -34,11 +34,10 @@ class WeatherAPIService {
 //    }
     
     func query<T: Decodable>(url: String, completion: @escaping (Result<T, APIError>) -> Void) {
-        //TODO: Guard it
-        //TODO: Throw exceptions
-        //TODO: Handle non 200 reponses
+        //DONE: Guard it
+        //DONE: Throw exceptions
+        //DONE: Handle non 200 reponses
         
-       
         guard !url.isEmpty else {
             print("Query is empty")
             return
@@ -79,6 +78,8 @@ class WeatherAPIService {
             }
             
             do {
+                let decoder = JSONDecoder()
+                    .dateDecodingStrategy = .secondsSince1970
                 let weatherConditions = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(weatherConditions))
             } catch let decodingError {

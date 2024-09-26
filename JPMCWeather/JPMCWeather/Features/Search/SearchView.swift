@@ -17,6 +17,8 @@ struct SearchView: View {
         return !searchQuery.isEmpty
     }
     
+    let apiService = WeatherAPIService.shared
+    
     var body: some View {
         
         VStack {
@@ -75,7 +77,7 @@ struct SearchView: View {
     
     //Search WeatherMapAPI on Submit
     private func queryWeather(for query: String) {
-        searchVM.queryWeather(query: query) { result in
+        apiService.queryWeather(location: query) { result in
             switch result {
             case .success(let result):
                 let newCity = Location(name: result.name, country: result.sys.country, lat: result.coord.lat, lon: result.coord.lon)

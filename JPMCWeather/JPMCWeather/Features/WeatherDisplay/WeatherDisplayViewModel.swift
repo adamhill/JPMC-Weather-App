@@ -8,12 +8,13 @@
 import Foundation
 import SwiftUICore
 @Observable class WeatherDisplayViewModel {
-    //var weather: WeatherConditionsModel?
+    var weather: WeatherConditionsModel?
     //let weatherAPI = WeatherAPIService.shared
+    
     var location : String
     
     init(location: String) {
         self.location = location}
-    
+        
 }
    

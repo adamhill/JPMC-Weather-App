@@ -15,7 +15,7 @@ struct WeatherConditionsModel: Codable {
     let visibility: Int
     let wind: Wind
     let clouds: Clouds
-    let dt: Int
+    let dt: Date
     let sys: Misc
     let timezone, id: Int
     let name: String

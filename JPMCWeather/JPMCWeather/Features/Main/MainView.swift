@@ -43,5 +43,7 @@ struct MainView: View {
 
 
 #Preview {
-    MainView().environment(SearchViewModel())
+    MainView()
+        .environment(SearchViewModel())
+    
 }
