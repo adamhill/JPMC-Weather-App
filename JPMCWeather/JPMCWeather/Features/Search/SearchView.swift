@@ -29,6 +29,7 @@ struct SearchView: View {
                         ForEach(searchResults) { location in
                             NavigationLink("\(location.description)", value: location.description)
                         }
+                        .onDelete(perform: deleteCity)
                     } else {
                         ForEach(searchVM.searchModel.locations) { location in
                             NavigationLink("\(location.description)", value: location.description)
@@ -86,6 +87,11 @@ struct SearchView: View {
                 print("Error: \(error)")
             }
         }
+    }
+    
+    //Delete a city from the List
+    func deleteCity(at offsets: IndexSet) {
+        searchVM.searchModel.locations.remove(atOffsets: offsets)
     }
 }
 

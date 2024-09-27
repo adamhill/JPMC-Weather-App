@@ -79,8 +79,9 @@ class WeatherAPIService {
             
             do {
                 let decoder = JSONDecoder()
-                    .dateDecodingStrategy = .secondsSince1970
-                let weatherConditions = try JSONDecoder().decode(T.self, from: data)
+                decoder.dateDecodingStrategy = .secondsSince1970
+                
+                let weatherConditions = try decoder.decode(T.self, from: data)
                 completion(.success(weatherConditions))
             } catch let decodingError {
                 completion(.failure(.decodingError(decodingError)))

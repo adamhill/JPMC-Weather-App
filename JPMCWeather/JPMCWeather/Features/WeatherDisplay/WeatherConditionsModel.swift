@@ -19,7 +19,10 @@ struct WeatherConditionsModel: Codable {
     let sys: Misc
     let timezone, id: Int
     let name: String
-
+    var fullLocation: String {
+        let loc = "\(name), \(sys.country)"
+        return loc
+    }
 }
 
 struct Coord: Codable {
