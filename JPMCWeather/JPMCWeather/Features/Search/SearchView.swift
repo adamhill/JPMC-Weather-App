@@ -29,11 +29,12 @@ struct SearchView: View {
                         ForEach(searchResults) { location in
                             NavigationLink("\(location.description)", value: location.description)
                         }
-                        .onDelete(perform: deleteCity)
+                       
                     } else {
                         ForEach(searchVM.searchModel.locations) { location in
                             NavigationLink("\(location.description)", value: location.description)
                         }
+                        .onDelete(perform: deleteCity)
                     }
                 }
                 .navigationDestination(for: String.self) { loc in
